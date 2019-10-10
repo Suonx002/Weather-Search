@@ -10,16 +10,16 @@
   <body>
     <div class="weather-container">
       <div class="weather-search">
-        <h3>Search Your Area</h3>
+        <h3>Weather Search</h3>
         <form class="weather-form">
           <input
             type="text"
-            id="search-city"
+            id="city-search"
             placeholder="Enter your city: Shakopee"
           />
           <input
             type="text"
-            id="search-state"
+            id="state-search"
             placeholder="Enter your state: MN"
           />
           <button type="submit" id="weather-btn">Search</button>
@@ -30,7 +30,10 @@
         <p class="timezone"><strong>Time Zone:</strong> America/Chicago</p>
         <p class="time"><strong>Current Time: </strong>2019-10-10:01</p>
         <div class="weather-output">
-          <div class="icon">c02n</div>
+          <img
+            src="https://www.weatherbit.io/static/img/icons/t01n.png"
+            class="icon"
+          />
           <p class="weather-desc">
             <strong>Description:</strong> Scattered clouds
           </p>
