@@ -57,7 +57,7 @@ p {
 }
 
 .weather-results {
-  display: block;
+  display: none;
 
   border-top: 2px solid #141414;
   margin: 1rem;
