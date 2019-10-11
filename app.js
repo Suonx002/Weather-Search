@@ -6,22 +6,26 @@ const weatherResults = document.querySelector('.weather-results');
 weatherForm.addEventListener('submit', getData);
 
 function getData(e) {
-  const api_key = '2895f439a5e9484f82efcf679f045bd9';
-  const city =
-    cityInput.value.slice(0, 1).toUpperCase() + cityInput.value.slice(1);
-  const state = stateInput.value.toUpperCase();
-  fetch(
-    `https://api.weatherbit.io/v2.0/current?city=${city},${state}&key=${api_key}`
-  )
-    .then(response => response.json())
-    .then(data => data.data[0])
-    .then(weather => {
-      displayWeather(weather);
-      clearInput();
-    })
-    .catch(err => {
-      alert('There is something wrong with the data...');
-    });
+  if (cityInput.value === '' || stateInput.value === '') {
+    alert('Please fill out both fields!');
+  } else {
+    const api_key = '2895f439a5e9484f82efcf679f045bd9';
+    const city =
+      cityInput.value.slice(0, 1).toUpperCase() + cityInput.value.slice(1);
+    const state = stateInput.value.toUpperCase();
+    fetch(
+      `https://api.weatherbit.io/v2.0/current?city=${city},${state}&key=${api_key}`
+    )
+      .then(response => response.json())
+      .then(data => data.data[0])
+      .then(weather => {
+        displayWeather(weather);
+        clearInput();
+      })
+      .catch(err => {
+        alert('There is something wrong with the data...');
+      });
+  }
 
   e.preventDefault();
 }
